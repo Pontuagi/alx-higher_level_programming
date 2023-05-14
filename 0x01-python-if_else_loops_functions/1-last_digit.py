@@ -2,7 +2,7 @@
 import random
 number = random.randint(-10000, 10000)
 no = number % 10
-if number < 0
+if number < 0:
     no = -no
 no_str = str(no)
 if int(no) > 5:
