@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-no = abs(number)% 10
+no = abs(number) % 10
 if number < 0:
     no = -no
 no_str = str(no)
