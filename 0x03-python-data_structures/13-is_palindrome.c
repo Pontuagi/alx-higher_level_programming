@@ -8,13 +8,13 @@
 */
 int is_palindrome(listint_t **head)
 {
-	listint_t *fast_ptr = *head;
-	listint_t *slow_ptr = *head;
-	listint_t *prev, *curr, *next, *first_part, *second_part;
+	listint_t *fast_ptr, *slow_ptr, *prev, *curr, *next, *first_part, *second_part;
 
 	if (*head == NULL)
 		return (1);
 
+	fast_ptr = *head;
+	slow_ptr = *head;
 	while(fast_ptr != NULL && slow_ptr != NULL)
 	{
 		fast_ptr = fast_ptr->next->next;
