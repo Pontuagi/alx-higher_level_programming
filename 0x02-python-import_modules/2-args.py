@@ -5,7 +5,7 @@ if __name__ == "__main__":
     if length == 2:
         print("1 argument:")
     elif length == 1:
-        print("1 argument.")
+        print("0 arguments.")
     else:
         print("{} arguments:".format(length - 1))
     i = 1
