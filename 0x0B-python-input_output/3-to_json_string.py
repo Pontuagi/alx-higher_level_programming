@@ -4,9 +4,8 @@
 This file contains one function
 The function return the JSON represantation of an object(string)
 """
-
-
 import json
+
 
 def to_json_string(my_obj):
     """
