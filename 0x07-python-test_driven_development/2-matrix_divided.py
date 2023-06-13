@@ -29,7 +29,8 @@ def matrix_divided(matrix, div):
     if (
             not isinstance(matrix, list)
             or not all(isinstance(row, list) for row in matrix)
-            or not all(all(isinstance(number, (int, float)) for number in row)
+            or not all(
+                all(isinstance(number, (int, float)) for number in row)
                 for row in matrix)
             ):
         raise TypeError(error_mess)
