@@ -1,0 +1,3 @@
+the module contains the function read_file.
+It reads text file and prints it to stdout
+
