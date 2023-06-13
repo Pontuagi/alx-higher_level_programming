@@ -1,7 +1,14 @@
 #!/usr/bin/python3
+"""
+This module contains one funtion
+it add two integers or floats and returns the sum
+"""
+
 
 def add_integer(a, b=98):
-    """ function that adds two integers
+    """
+    function that adds two integers and returns the sume
+
     Args:
         a (int or float): The first number.
         b (int or float, optional): the second number. Defaults to 98
@@ -17,9 +24,6 @@ def add_integer(a, b=98):
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
 
-    if isinstance(a, float):
-        a = int(a)
-    if isinstance(b, float):
-        b = int(b)
+    summation = int(a) + int(b)
 
-    return int(a + b)
+    return (summation)
