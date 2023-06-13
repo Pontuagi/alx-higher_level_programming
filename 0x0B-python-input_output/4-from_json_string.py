@@ -10,7 +10,8 @@ import json
 
 def from_json_string(my_str):
     """
-    this Function returns an object(Python data structure) represented bky a JSON string
+    this Function returns an object(Python data structure) represented
+    by a JSON string
 
     Args:
         my_str (str): the JSON string
