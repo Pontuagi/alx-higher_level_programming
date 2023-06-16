@@ -8,7 +8,7 @@ it defines a square
 
 class Square:
     """ A class that defines a square
-    
+
     Args:
         __size (int): The size of the square
     """
