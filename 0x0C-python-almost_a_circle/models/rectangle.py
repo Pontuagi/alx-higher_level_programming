@@ -42,7 +42,7 @@ class Rectangle(Base):
         self.__width = width
         self.__height = height
         self.__x = x
-        self.__x = y
+        self.__y = y
 
     @property
     def width(self):
@@ -54,7 +54,7 @@ class Rectangle(Base):
         """ set width """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
-        if value < 0:
+        if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
 
@@ -68,7 +68,7 @@ class Rectangle(Base):
         """ set the height value """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
-        if value < 0:
+        if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
 
@@ -108,13 +108,30 @@ class Rectangle(Base):
 
     def display(self):
         """ Display the rectangle """
+        for _ in range(self.__y):
+            print()
         for _ in range(self.__height):
-            print(" " * self.__x)
-            print("#" * self.__width)
+            print(" " * self.__x + "#" * self.__width)
 
     def __str__(self):
         """ print the Rectangle"""
-        new_str = '"[Rectangle] (" + id + ")" + self.__x + "/" + self.__y\
-        + "-" + self.__width + "/" + self.__height'
-
+        new_str = f'[Rectangle] ({self.id}) {self.__x}/{self.__y}'
+        new_str += f' - {self.__width}/{self.__height}'
         return (new_str)
+
+    def update(self, *args, **kwargs):
+        """ assign an argument to each attribute"""
+        if args:
+            if len(args) > 0:
+                self.id = args[0]
+            if len(args) > 1:
+                self.width = args[1]
+            if len(args) > 2:
+                self.height = args[2]
+            if len(args) > 3:
+                self.x = args[3]
+            if len(args) > 4:
+                self.y = args[4]
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
