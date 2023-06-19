@@ -58,7 +58,7 @@ class Square(Rectangle):
         """Return the dictionary represantation of Square"""
         return {
             'id': self.id,
-            'size': self.size,
+            'size': self.width,
             'x': self.x,
             'y': self.y
             }
