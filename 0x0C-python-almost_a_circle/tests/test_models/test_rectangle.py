@@ -111,5 +111,18 @@ class test_Rectangle(unittest.TestCase):
         self.assertEqual(str(r1), '[Rectangle] (9) 5/7 - 2/4')
         self.assertEqual(str(r2), '[Rectangle] (17) 13/12 - 10/17')
 
+    def test_to_dictionary(self):
+        """test to_dictionary output"""
+        r1 = Rectangle(10, 12, 4, 5, 17)
+        expected_dict = {
+            'id': 17,
+            'width': 10,
+            'height': 12,
+            'x': 4,
+            'y': 5
+            }
+        self.assertEqual(r1.to_dictionary(), expected_dict)
+
+
 if __name__ == '__main__':
     unittest.main()
