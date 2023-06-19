@@ -1,3 +1,4 @@
+from models.base import Base
 import unittest
 
 class TestBase(unittest.TestCase):
@@ -23,8 +24,9 @@ class TestBase(unittest.TestCase):
 
     def test_invalidIdType(self):
         """ test if TypeError is raised if id is not integer"""
+        b1 = Base()
         with self.assertRaises(TypeError):
-            Base("id")
+            b1("id")
 
     def test_existingId(self):
         """ Test id with same id """
@@ -35,5 +37,5 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b1.id, 1)
 
 
-if __name__ = '__main__':
+if __name__ == '__main__':
     unittest.main()
