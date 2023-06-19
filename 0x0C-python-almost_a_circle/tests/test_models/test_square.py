@@ -58,6 +58,14 @@ class test_Square(unittest.TestCase):
         self.assertEqual(s1.height, 9)
         self.assertEqual(s1.x, 6)
         self.assertEqual(s1.y, 12)
+
+        s1.update(17, 12, 3, 6)
+        self.assertEqual(s1.id, 17)
+        self.assertEqual(s1.size, 12)
+        self.assertEqual(s1.x, 3)
+        self.assertEqual(s1.y, 6)
+        self.assertEqual(s1.width, 12)
+        self.assertEqual(s1.height, 12)
     
     def test_setter(self):
         """Test the setter and getter"""
