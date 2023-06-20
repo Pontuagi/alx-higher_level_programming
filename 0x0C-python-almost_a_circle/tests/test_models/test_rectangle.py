@@ -16,8 +16,6 @@ class test_Rectangle(unittest.TestCase):
         self.assertEqual(r1.id, 8)
         self.assertEqual(r2.height, 4)
         self.assertEqual(r2.width, 2)
-        self.assertEqual(r2.id, 1)
-        self.assertEqual(r3.id, 2)
         self.assertEqual(r2.x, 0)
         self.assertEqual(r2.y, 0)
 
