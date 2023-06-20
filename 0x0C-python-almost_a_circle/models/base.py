@@ -75,7 +75,7 @@ class Base:
                 return ([cls.create(**obj_dict) for obj_dict in obj_dicts])
         except FileNotFoundError:
             return ([])
-    
+
     @classmethod
     def save_to_file_csv(cls, list_obj):
         """serialize objects to CSV file"""
@@ -103,8 +103,7 @@ class Base:
                     if cls.__name__ == "Rectangle":
                         obj = cls(
                             int(row[0]), int(row[1]), int(row[2]),
-                            int(row[3]), int(row[4])
-                            )
+                            int(row[3]), int(row[4]))
                     elif cls.__name__ == "Square":
                         obj = cls(
                             int(row[0]), int(row[1]), int(row[2]),
@@ -113,4 +112,3 @@ class Base:
                 return (obj_list)
         except FileNotFoundError:
             return ([])
-
