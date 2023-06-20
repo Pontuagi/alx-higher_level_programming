@@ -4,6 +4,7 @@
 This module contains one class Base
 """
 import json
+import csv
 
 
 class Base:
@@ -74,3 +75,42 @@ class Base:
                 return ([cls.create(**obj_dict) for obj_dict in obj_dicts])
         except FileNotFoundError:
             return ([])
+    
+    @classmethod
+    def save_to_file_csv(cls, list_obj):
+        """serialize objects to CSV file"""
+        if list_obj is None:
+            list_obj = []
+        filename = cls.__name__ + ".csv"
+        with open(filename, 'w', newline='') as file:
+            writer = csv.writer(file)
+            for obj in list_obj:
+                if cls.__name__ == "Rectangle":
+                    row = [obj.id, obj.width, obj.height, obj.x, obj.y]
+                elif cls.__name__ == "Square":
+                    row = [obj.id, obj.size, obj.x, obj.y]
+                writer.writerow(row)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserialize objects from csv file"""
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, 'r', newline='') as file:
+                reader = csv.reader(file)
+                obj_list = []
+                for row in reader:
+                    if cls.__name__ == "Rectangle":
+                        obj = cls(
+                            int(row[0]), int(row[1]), int(row[2]),
+                            int(row[3]), int(row[4])
+                            )
+                    elif cls.__name__ == "Square":
+                        obj = cls(
+                            int(row[0]), int(row[1]), int(row[2]),
+                            int(row[3]))
+                    obj_list.append(obj)
+                return (obj_list)
+        except FileNotFoundError:
+            return ([])
+
