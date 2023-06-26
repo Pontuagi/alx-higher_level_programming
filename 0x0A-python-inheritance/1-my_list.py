@@ -3,6 +3,9 @@
 """
 this module contains one class MyList
 """
+import doctest
+
+doctest.testfile("tests/1-my_list.txt")
 
 
 class MyList(list):
