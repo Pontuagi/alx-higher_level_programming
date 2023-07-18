@@ -1,4 +1,4 @@
 -- List all tables of a database in MYSQL server
-USE $$;
+USE mysql;
 
 SHOW TABLES;
