@@ -1,4 +1,4 @@
 -- Compute score avarage of all records in second_table
-USE %S;
+USE hbtn_0c_0;
 SELECT AVG(score) AS average
 FROM second_table;
