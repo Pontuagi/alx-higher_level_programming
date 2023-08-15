@@ -6,7 +6,6 @@
  */
 const { argv } = require('process');
 
-
 if (!isNaN(argv[2])) {
   console.log('My number: ' + Number(argv[2]));
 } else {
