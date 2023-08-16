@@ -3,11 +3,11 @@
 /*
  * A class square that inherits from square of 5-square.js
  */
-const oldSquare = require('./5-square.js');
+const ParentSquare = require('./5-square');
 
-class Square extends oldSquare {
+class Square extends ParentSquare {
   constructor (size) {
-    super(size, size);
+    super(size);
   }
 
   charPrint (c) {
