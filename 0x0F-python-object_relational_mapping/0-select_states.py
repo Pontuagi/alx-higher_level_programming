@@ -6,12 +6,20 @@ The script lists all states from a database
 It uses the MySQLdb module
 """
 import MySQLdb
+import sys
 
 
-def list_states(username, password, database):
+def list_states():
     """
     This function lists all states from the database hbtn_0e_0_usa
     """
+    if len(sys.argv) != 4:
+        return
+
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
+
     # Connect to MySQL server
     db = MySQLdb.connect(
         host='localhost',
@@ -20,7 +28,7 @@ def list_states(username, password, database):
         passwd=password,
         db=database)
 
-    #create cursor
+    # create cursor
     cursor = db.cursor()
 
     # Execute the query
@@ -30,19 +38,13 @@ def list_states(username, password, database):
     # Fetch the rows
     states = cursor.fetchall()
 
+    # Display the results
+    for state in states:
+        print(state)
+
     # Close the cursor and the database connection
     cursor.close()
     db.close()
 
-    # Display the results
-    print("States:")
-    for state in states:
-        print(state)
-
-
-if __name__ == "__main__":
-    username = 'Pontuagi'
-    password = 'Pass'
-    database = 'hbtn_0e_0_usa'
-
-    list_states(username, password, database)
+    if __name == "__main__":
+        list_states()
