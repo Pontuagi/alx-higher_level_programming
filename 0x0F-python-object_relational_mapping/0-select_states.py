@@ -16,24 +16,24 @@ def list_states():
     if len(sys.argv) != 4:
         return
 
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
+    # username = sys.argv[1]
+    # password = sys.argv[2]
+    # database = sys.argv[3]
 
     # Connect to MySQL server
     db = MySQLdb.connect(
         host='localhost',
         port=3306,
-        user=username,
-        passwd=password,
-        db=database)
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3]
+    )
 
     # create cursor
     cursor = db.cursor()
 
     # Execute the query
-    query = "SELECT * FROM states ORDER BY states.id ASC"
-    cursor.execute(query)
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
 
     # Fetch the rows
     states = cursor.fetchall()
