@@ -8,11 +8,12 @@ It fetches a url
 import urllib.request
 
 
-def fetch_status(url):
+def fetch_status():
     """
     Function to fetch a url
     Uses the package urllib
     """
+    url = "https://alx-intranet.hbtn.io/status"
     try:
         with urllib.request.urlopen(url) as response:
             body_bytes = response.read()
@@ -28,5 +29,4 @@ def fetch_status(url):
 
 
 if __name__ == "__main__":
-    url = "https://alx-intranet.hbtn.io/status"
-    fetch_status(url)
+    fetch_status()
