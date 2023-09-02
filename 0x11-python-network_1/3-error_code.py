@@ -12,13 +12,14 @@ import sys
 
 
 def fetch_url_content(url):
+    """
+    A function to send request to URL and display body responce
+    """
     try:
         with urllib.request.urlopen(url) as response:
             body_bytes = response.read()
             body_str = body_bytes.decode("utf-8")
 
-            print("    - type:", type(body_bytes))
-            print("    - content:", repr(body_bytes))
             print("    - utf8 content:", body_str)
 
     except urllib.error.HTTPError as e:
