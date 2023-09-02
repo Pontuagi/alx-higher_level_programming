@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-A pyhton script to display url value
+A python script to display url value
 """
 
 import urllib.request
@@ -18,16 +18,11 @@ def get_x_request_id(url):
             x_request_id = response.getheader('X-Request-Id')
             if x_request_id:
                 print(f"{x_request_id}")
-            else:
-                print("X-Request-Id not found")
 
     except urllib.error.URLError as e:
         print("Error:", e)
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: ./1-hbtn_header.py <URL>")
-    else:
-        url = sys.argv[1]
-        get_x_request_id(url)
+    url = sys.argv[1]
+    get_x_request_id(url)
