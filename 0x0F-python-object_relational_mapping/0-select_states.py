@@ -6,9 +6,10 @@ The script lists all states from a database
 It uses the MySQLdb module
 """
 import MySQLdb
-import sys
 
 if __name__ == "__main__":
+    import sys
+
     # Connect to MySQL server
     db = MySQLdb.connect(
         host='localhost',
@@ -29,8 +30,4 @@ if __name__ == "__main__":
 
     # Display the results
     for state in states:
-        print("{}: {}".format(state[0], state[1]))
-
-    # Close the cursor and the database connection
-    cursor.close()
-    db.close()
+        print(state)
