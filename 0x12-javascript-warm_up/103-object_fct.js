@@ -8,12 +8,12 @@ const myObject = {
   value: 12
 };
 
+console.log(myObject);
+
 // Define the incr function
-myObject.incr = function incr () {
+myObject.incr = function () {
   this.value++;
 };
-
-console.log(myObject);
 
 myObject.incr();
 console.log(myObject);
