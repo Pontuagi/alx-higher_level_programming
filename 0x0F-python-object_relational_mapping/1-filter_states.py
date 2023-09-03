@@ -28,7 +28,7 @@ if __name__ == '__main__':
     # Fetch rows
     states_with_N = cursor.fetchall()
     for state in states_with_N:
-        print("{}: {}".format(state[0], state[1]))
+        print("{}: {}".format(state.id, state))
 
     # Close cursor and connection
     cursor.close()
