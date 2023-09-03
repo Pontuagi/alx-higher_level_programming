@@ -13,13 +13,6 @@ def list_states():
     """
     This function lists all states from the database hbtn_0e_0_usa
     """
-    if len(sys.argv) != 4:
-        return
-
-    # username = sys.argv[1]
-    # password = sys.argv[2]
-    # database = sys.argv[3]
-
     # Connect to MySQL server
     db = MySQLdb.connect(
         host='localhost',
