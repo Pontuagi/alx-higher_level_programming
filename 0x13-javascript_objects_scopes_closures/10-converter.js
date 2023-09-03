@@ -4,16 +4,24 @@
  * A function that converts a number from base 10 to another base passed as argument
  */
 exports.converter = function (base) {
-  if (base <= 1) {
-    return;
-  }
-
-  function convertToBase (number) {
-    if (number >= base) {
-      convertToBase(Math.floor(number / base));
+  const hexChars = '0123456789ABCDEF';
+  function convertToBase(number, base) {
+    if (number === 0) {
+      return '';
     }
-    process.stdout.write((number % base).toString());
+    const remainder = number % base;
+    const quotient = Math.floor(number / base);
+    return convertToBase(quotient, base) + hexChars[remainder];
   }
 
-  return convertToBase;
+  return function (number) {
+    if (base < 2 || base > 36) {
+      throw new Error('Base should be between 2 and 36');
+    }
+    if (isNaN(number) || number < 0) {
+      throw new Error('Number should be a positive integer');
+    }
+
+    return convertToBase(number, base);
+  };
 };
