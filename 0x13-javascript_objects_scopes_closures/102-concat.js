@@ -5,7 +5,6 @@
  */
 
 const fs = require('fs');
-const path = require('path');
 
 if (process.argv.length !== 5) {
   console.error('Usage: ./102-concat <file_1> <file_2> <dest_file>');
@@ -39,7 +38,6 @@ fs.readFile(sourceFile1, 'utf8', (err, data1) => {
         console.error(`Error writing to ${destinationFile}: ${err.message}`);
         process.exit(1);
       }
-
     });
   });
 });
