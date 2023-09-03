@@ -30,7 +30,3 @@ if __name__ == '__main__':
     states_with_N = cursor.fetchall()
     for state in states_with_N:
         print(state)
-
-    # Close cursor and connection
-    cursor.close()
-    db.close()
