@@ -8,3 +8,6 @@ function callMeMoby(x, theFunction) {
     theFunction();
   }
 }
+
+// Export the function
+module.exports.callMeMoby = callMeMoby;
