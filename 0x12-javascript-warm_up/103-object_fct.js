@@ -9,7 +9,7 @@ const myObject = {
 };
 
 // Define the incr function
-myObject.incr = function () {
+myObject.incr = function incr() {
   this.value++;
 };
 
