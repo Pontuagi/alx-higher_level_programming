@@ -15,7 +15,9 @@ def get_github_user_id(username, access_token):
     url = f"https://api.github.com/user"
 
     try:
-        response = requests.get(url, auth=HTTPBasicAuth(username, access_token))
+        response = requests.get(
+            url, auth=HTTPBasicAuth(username, access_token)
+            )
         if response.status_code == 200:
             user_data = response.json()
             user_id = user_data["id"]
