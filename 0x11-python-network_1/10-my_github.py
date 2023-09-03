@@ -7,17 +7,15 @@ Uses github api to display your id
 
 import requests
 import sys
+from requests.auth import HTTPBasicAuth
 
 
 def get_github_user_id(username, access_token):
     """ A function to fetch github id """
     url = f"https://api.github.com/user"
-    headers = {
-        "Authorization": f"Basic {username}:{access_token}"
-    }
 
     try:
-        response = requests.get(url, headers=headers)
+        response = requests.get(url, auth=HTTPBasicAuth(username, access_token))
         if response.status_code == 200:
             user_data = response.json()
             user_id = user_data["id"]
