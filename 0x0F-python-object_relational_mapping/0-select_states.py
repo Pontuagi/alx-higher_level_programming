@@ -8,11 +8,7 @@ It uses the MySQLdb module
 import MySQLdb
 import sys
 
-
-def list_states():
-    """
-    This function lists all states from the database hbtn_0e_0_usa
-    """
+if __name__ == "__main__":
     # Connect to MySQL server
     db = MySQLdb.connect(
         host='localhost',
@@ -33,11 +29,8 @@ def list_states():
 
     # Display the results
     for state in states:
-        print(state)
+        print("{}: {}".format(state[0], state[1]))
 
     # Close the cursor and the database connection
     cursor.close()
     db.close()
-
-    if __name == "__main__":
-        list_states()
