@@ -6,6 +6,7 @@ states table of hbtn_0e_0_usa where name matches the argument
 import MySQLdb
 import sys
 
+
 def sql_injection():
     """
     -a script that is safe from MySQL injections!
