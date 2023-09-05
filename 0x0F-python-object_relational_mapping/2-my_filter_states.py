@@ -16,7 +16,7 @@ if __name__ == "__main__":
         host="localhost",
         port=3306,
         user=sys.argv[1],
-        passwd=sys.argv[2]
+        passwd=sys.argv[2],
         db=sys.argv[3]
     )
 
@@ -25,7 +25,7 @@ if __name__ == "__main__":
     cursor.execute(query.format(sys.argv[4]))
 
     states = cursor.fetchall()
-    for states in query_rows:
+    for state in states:
         print(row)
 
     cursor.close()
