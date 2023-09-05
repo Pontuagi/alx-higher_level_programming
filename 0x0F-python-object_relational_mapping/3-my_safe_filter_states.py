@@ -1,12 +1,16 @@
 #!/usr/bin/python3
 """
-a sript that is safe from MySQL injections!
+a script that takes in arguments and displays all values in the
+states table of hbtn_0e_0_usa where name matches the argument
 """
 import MySQLdb
 import sys
 
-
-if __name__ == '__main__':
+def sql_injection():
+    """
+    -a script that is safe from MySQL injections!
+    -query to prevent SQL injection
+    """
     if len(sys.argv) != 5:
         return
 
@@ -28,3 +32,7 @@ if __name__ == '__main__':
         print(row)
     cur.close()
     db.close()
+
+
+if __name__ == "__main__":
+    sql_injection()
