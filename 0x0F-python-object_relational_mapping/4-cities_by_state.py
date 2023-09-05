@@ -11,8 +11,6 @@ def cities_by_state():
     function to lists all cities database
     hbtn_0e_4_usa
     """
-    if len(sys.argv) != 4:
-        return
 
     db = MySQLdb.connect(
         host="localhost",
