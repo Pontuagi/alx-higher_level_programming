@@ -12,7 +12,7 @@ from sqlalchemy.orm import sessionmaker
 from sys import argv
 
 
-def List_relatioship():
+def List_relationship():
     if len(argv) != 4:
         return
 
