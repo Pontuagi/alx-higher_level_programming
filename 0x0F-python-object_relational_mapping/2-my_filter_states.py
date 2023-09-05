@@ -12,24 +12,20 @@ import MySQLdb
 if __name__ == "__main__":
     import sys
 
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database_name = sys.argv[3]
-    state_name = sys.argv[4]
-
-    connection = MySQLdb.connect(
+    db = MySQLdb.connect(
         host="localhost",
         port=3306,
-        user=username,
-        passwd=password,
-        db=database_name
-        )
+        user=sys.argv[2],
+        db=sys.argv[3]
+    )
 
-    cursor = connection.cursor()
-    query = "SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC"
-    cursor.execute(query, (state_name,))
+    cursor = db.cursor()
+    query = "SELECT * FROM states WHERE name LIKE BINARY \ '{}' ORDER BY id ASC"
+    cursor.execute(query.format(sys.argv[4]))
 
     states = cursor.fetchall()
+    for states in query_rows:
+        print(row)
 
-    for state in states:
-        print(state)
+    cursor.close()
+    db.close()
