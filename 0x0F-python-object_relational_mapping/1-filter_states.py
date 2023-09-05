@@ -29,7 +29,7 @@ if __name__ == '__main__':
     # Fetch rows
     states_with_N = cursor.fetchall()
     for state in states_with_N:
-        if state[0] == 'N':
+        if state[1][0] == 'N':
             print(state)
 
     db.close()
