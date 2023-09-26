@@ -22,7 +22,8 @@ request.get(movieUrl, (error, response, body) => {
     try {
       const filmsData = JSON.parse(body);
       const antillesMovies = filmsData.results.filter((film) => {
-        return film.characters.includes('https://swapi-api.alx-tools.com/api/people/18/');
+        return film.characters.includes(
+          'https://swapi-api.alx-tools.com/api/people/18/');
       });
       console.log(`${antillesMovies.length}`);
     } catch (parseError) {
