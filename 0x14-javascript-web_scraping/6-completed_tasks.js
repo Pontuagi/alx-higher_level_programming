@@ -40,7 +40,7 @@ request.get(apiUrl, (error, response, body) => {
 
       // Print the number of completed tasks for each user
       for (const userId in userTaskCount) {
-        console.log(`'${userId}': ${userTaskCount[userId]}`);
+        console.log(`${userId}: ${userTaskCount[userId]}`);
       }
     } catch (parseError) {
       console.error('Error parsing API response:', parseError);
