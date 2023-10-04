@@ -6,9 +6,9 @@
  */
 
 // Wait for the document to fully load
-$(document).ready(function() {
+$(document).ready(function () {
   // click event handler
-  $('#toggle_header').click(function() {
+  $('#toggle_header').click(function () {
     // toggle red and green classes
     $('header').toggleClass('red green');
   });
