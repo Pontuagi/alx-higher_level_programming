@@ -1,6 +1,6 @@
-﻿0x01-python-if_else_loops_functions
+﻿# 0x01-python-if_else_loops_functions
 
-Learning Objectives:
+## Learning Objectives:
 
     • Why Python programming is awesome
     • Why indentation is so important in Python
@@ -19,7 +19,7 @@ Learning Objectives:
     • What’s a traceback
     • What are the arithmetic operators and how to use them
 
-Files:
+## Files:
 
     • 0-positive_or_negative.py - a program that will assign a random signed number to the variable number each time it is executed. Complete the source code {https://intranet.alxswe.com/rltoken/e4tR3cjFHqhelf4y485-zQ} in order to print whether the number stored in the variable number is positive or negative.
     • 1-last_digit.py - This program will assign a random signed number to the variable number each time it is executed. Complete the source code [https://intranet.alxswe.com/rltoken/Vku0ZPFeDPuXUKD8nZ4mOQ] in order to print the last digit of the number stored in the variable number.
