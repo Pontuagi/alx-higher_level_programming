@@ -8,4 +8,3 @@ def uppercase(str):
             caps += upper_case
         else:
             caps += char
-    print (caps)
