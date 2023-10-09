@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+import compileall
+import os
+
+input_file = os.getenv('PYFILE')
+output_file = input_file + 'c'
+
+print("Compling {} ...".format(input_file))
+
+compileall.compile_file(input_file, quiet=True, optimize=2, legacy=True)
