@@ -5,6 +5,13 @@ import os
 input_file = os.getenv('PYFILE')
 output_file = input_file + 'c'
 
-print("Compling {} ...".format(input_file))
+if input_file:
+    print("Compiling {} ...".format(input_file))
 
-compileall.compile_file(input_file, quiet=True, optimize=2, legacy=True)
+    try:
+        compileall.compile_file(input_file, quiet=True, optimize=2, legacy=True)
+        print("Successfully compiled {} to {}.".format(input_file, output_file))
+    except Exception as e:
+        print("Compilation failed: {}".format(e))
+else:
+    print("Environment variable PYFILE is not set.")
