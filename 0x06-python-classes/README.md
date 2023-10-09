@@ -1,6 +1,6 @@
-﻿0x06-python-classes and Objects
+﻿# 0x06-python-classes and Objects
 
-Learning Objectives:
+## Learning Objectives:
 
     • Why Python programming is awesome
     • What is OOP
@@ -24,7 +24,7 @@ Learning Objectives:
     • How to use the getattr function
 
 
-Files:
+## Files:
     • 0-square.py - an empty class Square that defines a square:
     • 1-square.py - a class Square that defines a square by: (based on 0-square.py)
         ◦ Private instance attribute: size
@@ -84,4 +84,3 @@ Files:
             ▪ if size is equal to 0, print an empty line
             ▪ position should be use by using space - Don’t fill lines by spaces when position[1] > 0
         ◦ You are not allowed to import any module
-    • 
