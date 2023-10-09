@@ -1,6 +1,6 @@
-﻿0x00. Python - Hello, World
+﻿# 0x00. Python - Hello, World
 
-Learning Objectives:
+## Learning Objectives:
 
     • Why Python programming is awesome
     • Who created Python
@@ -14,7 +14,7 @@ Learning Objectives:
     • What is the official Python coding style and how to check your code with pycodestyle
 
 
-Files:
+## Files:
 
     • 0-run:  a Shell script that runs a Python script.
     • 1-run_inline: a Shell script that runs Python code.
